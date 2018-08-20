@@ -27,7 +27,7 @@ Note: When you're done, submit a PR.
   c. C = Controller and represents the business logic. It coordinates the responses to http requests.
 
 4. Why do we follow conventions when creating our actions/path names in our Sinatra routes?
-  
+  -
 
 5. What types of variables are accessible in our view templates without explicitly passing them?
   Instance variables.
@@ -49,7 +49,7 @@ Note: When you're done, submit a PR.
   
 
 9. Why do I need a development AND test database?
-  
+  I would guess the development database is where the valuable data lives. In the testing process experimenting with data       should be possible without to worry about causing damage to the valuable data. I guess that's why testing and a development   are kept seperate from each other, by having a database for each one.
 
 10. What is CRUD and why is it important?
   a. C = Create
@@ -72,6 +72,13 @@ Note: When you're done, submit a PR.
   ActiveRecord
 
 15. Let's say we have an application with restaurants. There are seven verb + path combinations necessary to provide full CRUD  functionality for our restaurant application. List each of the seven combinations, and explain what each is for.
+  1. GET: '/restaurants' -> user can list all restaurants.
+  2. GET: 'restaurants/new' -> user can create a new restaurant and should be able to submit it.
+  3. POST: 'restaurants' -> user can save the new restaurant and should subsequently be redirected to the show page of the new      restaurant or to the updated index page with all restaurants listed including the new created one.
+  4. GET: 'restaurants/:id' -> user can call up/view a specific restaurant that is specified through the entered id.
+  5. GET: 'restaurants/:id/edit' -> user can edit a specific restaurant that is specified through the entered id and should be      able to submit the changes.
+  6. PUT: 'restaurants/:id' -> user can update the specific restaurant, that is specified through the entered id and                subsequently be redirected to the show page of the updated restaurant or to the updated index page with all restaurants        listed including the updated one.
+  7. DELETE: 'restaurants/:id' -> user can delete a specific restaurant that is specified through the entered id and should be      redirected to the index page of the remaining restaurants, that don't include the deleted one anymore.
 
 16. What's a migration?
   Inserting data into the database (feeding the database)
@@ -103,6 +110,14 @@ Note: When you're done, submit a PR.
 
 ### Review Questions:  
 22. Given a CSV file (“films.csv”) with these headers [id, title, description], how would you load these into your database to create new instances of Film?
+I would seed them by:
+  1. creating a seed file
+  2. adding this to the seed file: CSV.foreach('./film.csv', headers: true, header_converters: :symbol) do |film|
+                                   Film.create(id: film[:id],
+                                               title: film[:title],
+                                               description: film[:description])
+  3. run 'rake db:seed'
+                                          
  
 
 23. Given the following hash:
@@ -115,6 +130,7 @@ activities = {
 }
 ```
 How would I add 'granola bar' to things you should have when hiking?
+ activities[:hiking][:supplies] << granola bar
 
 24. What are the 4 Principles of OOP? Give a one sentence explanation of each.
   a. Single Responsibility Principle (SRP): A method should be responsible for no more than completing one single thing.
