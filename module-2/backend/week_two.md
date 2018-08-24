@@ -56,6 +56,7 @@ Now how would you find the owner of the team with an id of 4?
   
   
 6. Define foreign key, primary key, and schema.
+  schema: displays the current structure of the database, it shows which tables are in the database and which columns each       table has
   
 
 7. Describe the relationship between a foreign key on one table and a primary key on another table.
@@ -74,6 +75,8 @@ Now how would you find the owner of the team with an id of 4?
   e. .order(:amount) ->  orders a set of recods by the specified field in a table, here order by amount.
   
 2. Name your three favorite ActiveRecord rake tasks and describe what they do.
+  a. rake db:create -> creates the database.
+  b. rake db:migrate -> 
 
 3. What two columns does `t.timestamps null: false` create in our database?
   It adds the two columns 'created_at' and 'updated_at' to the table.
