@@ -155,6 +155,7 @@ Now how would you find the owner of the team with an id of 4?
      museum_id: 2 (foreign_key)
     
 9. What could you see in your code that would make you think you might want to create a partial?
+    If saw different view template codes that are basically the same.
    
 
 ### Self Assessment:
