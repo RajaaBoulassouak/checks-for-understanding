@@ -95,6 +95,8 @@ Now how would you find the owner of the team with an id of 4?
   If the two same tables should be related, then the primary key on the one (primary) table is the same key as the foreign key   on the other (foreign) table representing the same object in the two tables.
   
 8. What are the parts of an HTTP response?
+  -Response header containing the Status Line
+  -Response message body
 
 
 ### Optional Questions
@@ -155,9 +157,8 @@ Now how would you find the owner of the team with an id of 4?
      museum_id: 2 (foreign_key)
     
 9. What could you see in your code that would make you think you might want to create a partial?
-    If saw different view template codes that are basically the same.
+    If see different view template codes that are basically the same.
    
-
 ### Self Assessment:
 Choose One:
 * I was able to answer most questions independently, but utilized outside resources for a few
