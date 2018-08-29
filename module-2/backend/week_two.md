@@ -10,6 +10,9 @@ Note: When you're done, submit a PR.
 1. At a high level, what is ActiveRecord? What does it do/allow you to do?
   It allows finding database records without to have to use raw SQL for that.
   
+  **ActiveRecord is an ORM (Object-Relational-Mapping). It communicates with our database and turns queries into SQL               statements. It also allows us to interact with objects in our database as if they are regular Ruby objects.
+
+  
 2. Assume you have the following model:
 
 ```ruby
@@ -25,14 +28,18 @@ What are some methods you can call on `Team`? If these methods aren't defined in
  first
  last 
  ...
- 
  ActiveRecord methods are accessable through the inheritance from ActiveRecord (< ActiveRecord::Base). I don't think they need   to be defined in class methods in order to be accessable, but not sure.
+ 
+ **Through inheritance, Team has access to all the ActiveRecord methods, including find, find_by, all, where, etc.
 
 3. Assume that in your database, a team has the following attributes: "id", "name", owner_id". How would you find the name of a team with an id of 4? Assuming your class only included the code from question 2, how could you find the owner of the same team?
   a. team = Team.find(4)
       team.name
   
   b. team.owner_id
+  
+  **team = Team.find(4)
+  **Owner.find_by(team: team) 
   
   I think I can only retrieve the 'owner_id' of 'team', not the whole information about the owner, because there is no             relationship set between team and owner.  
 
@@ -47,6 +54,8 @@ end
 Now how would you find the owner of the team with an id of 4?
   team = Team.find(4)
   Owner.team.name
+  
+  **Team.find(4).owner
 
 5. In a database that's holding students and teachers, what will be the relationship between students and teachers? Draw the schema diagram. 
 
@@ -88,16 +97,25 @@ Now how would you find the owner of the team with an id of 4?
   
 6. Define foreign key, primary key, and schema.
   primary key: identifies an object in it's primary table. The table in which the object primary exists.
-  foreign key: identifies an object in a related foreign table. Objects exists primary in an other table, but is reference       to through the foreign key in a different table.
+  foreign key: identifies an object in a related foreign table. Objects exists primary in an other table, but is referenced     to through the foreign key in a different table.
   schema: displays the current structure of the database, it shows which tables are in the database and which columns each       table has.
+  
+  **Primary key = how each record is uniquely identified in the database
+  **Foreign key = used to link two tables together
+  **Schema = a map of the tables in the database
   
 7. Describe the relationship between a foreign key on one table and a primary key on another table.
   If the two same tables should be related, then the primary key on the one (primary) table is the same key as the foreign key   on the other (foreign) table representing the same object in the two tables.
   
+  **The foreign key references the primary key of another table.
+  
 8. What are the parts of an HTTP response?
   -Response header containing the Status Line
   -Response message body
-
+  
+  **status
+  **header(s)
+  **body
 
 ### Optional Questions
 
@@ -108,10 +126,20 @@ Now how would you find the owner of the team with an id of 4?
   d. .first(5) -> reuturns the first records of a table, here first 5 records.
   e. .order(:amount) ->  orders a set of recods by the specified field in a table, here order by amount.
   
+  **find = returns record by ID
+  **find_by = returns first record that matches criteria
+  **where = returns all records that match criteria
+  **sum = adds all information that match criteria
+  **joins = joins a table based on matching criteria
+  
 2. Name your three favorite ActiveRecord rake tasks and describe what they do.
   a. rake db:create -> creates the database.
   b. rake db:migrate -> create, update or delete a table in the database
   c. rake db:seed -> fills a table in the database with content
+  
+  **rake db:migrate = takes the migrations and creates a database based on them
+  **rake db:setup = db:create, db:schema:load, db:seed all at once
+  **rake db:reset = db:drop db:setup
 
 3. What two columns does `t.timestamps null: false` create in our database?
   It adds the two columns 'created_at' and 'updated_at' to the table.
@@ -135,6 +163,8 @@ Now how would you find the owner of the team with an id of 4?
 
 6. Give an example of when you might want to store information besides ids on a join table.
   If e.g. there is table of students that visit many courses and a table of courses that is hosting many students and the       students have a score on each course they visit, then I'll need a join table that's hosting also the score for each student   course combination
+  
+  **A student might have many classes and the grades for each of those classes could be stored on a join table.
       
 
 7. Describe and diagram the relationship between patients and doctors.
@@ -158,6 +188,8 @@ Now how would you find the owner of the team with an id of 4?
     
 9. What could you see in your code that would make you think you might want to create a partial?
     If see different view template codes that are basically the same.
+    
+    **Repetitive information.
    
 ### Self Assessment:
 Choose One:
