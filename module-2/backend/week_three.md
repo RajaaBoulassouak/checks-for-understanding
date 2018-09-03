@@ -29,7 +29,7 @@ Note: When you're done, submit a PR with a reflection in the comments about how 
    I would use them anywhere where I need to specify a path in my code. They are easier to remember and easier to write and in    case the uri syntax get's changed, the paths will be updated automatically so that I don't have to change every single path    individually
 
 7. What's the difference between what `_url` and `_path` return when combined with a routes prefix?
- 
+   both should return the same page.
   
 8. What are strong params and why are they necessary?
    Strong parameters are used to verify that the parameters (form data) coming in is permitted before it's sent to the data      base. It's is a security practice to help prevent accidentally allowing users to update sensitive model attributes and also    makes sure required attributes are present before creating a new object.
