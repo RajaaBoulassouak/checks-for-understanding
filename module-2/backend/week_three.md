@@ -51,8 +51,14 @@ Note: When you're done, submit a PR with a reflection in the comments about how 
     
 
 12. Why do we want to validate our models?
+   Validations are used to ensure that only valid data is saved into the database and model-level validations are the best way    to ensure that only valid data is saved into the database.
 
 13. What are the steps of the DNS lookup?
+   Step 1: Network connected devices send a request to a nameserver. If the server does not have the answer cached it moves to            step two.
+   Step 2: The nameserver from Step 1 sends a query to the root nameservers to resolve the address for the top-level domain              which then returns a referral to the nameserver from Step 1.
+   Step 3: The nameserver from Step 1 sends a query to the top level nameservers which then return a referral to the second-              level nameservers.
+   Step 4: The nameserver from Step 1 sends a query to the second-level nameservers which then return a referral to the third-            level nameservers.
+   Step 5: The nameserver from Step 1 sends a query to the third-level nameservers which then returns an authoritative answer             back.
 
 ### Review Questions
 14. Within a feature test and given the following HTML, write the code necessary to target the following section and check the person's name?
@@ -68,6 +74,9 @@ Note: When you're done, submit a PR with a reflection in the comments about how 
   end
   
 15. How would you call the method `prance` from within the method `move` on a `Horse` instance?
+     def self.move
+       prance
+     end
 
 16. Given the following hash:
 
