@@ -10,16 +10,31 @@ Note: When you're done, submit a PR with a reflection in the comments about how 
 ### Week 4 Questions
 
 1. What is a cookie?
+   A cookie is used to store small amounts of data during a session, e.g. a unique session ID
+ 
 2. What’s the difference between a session and a cookie?
+   A session stores data on the server, a cookie stores data in the visitor's browser
+ 
 3. What’s a flash and when do you want to use flashes?
+   A flash is a part of a session. Values stored in a flah will be available only in the next request. A flash can e.g. be        used for passing a notice/message after a user logs in or logs out.
+ 
 4. Why do people say “HTTP is stateless”?
+   Becausen
+ 
 5. What’s authentication? Explain.
+ 
 6. What’s the difference between authentication and authorization?
+
 7. What’s a before filter?
+
 8. How do we keep track of a user once they’ve logged in?
+
 9. When do you want to namespace a resource? When do you want to nest a resource? What's the differences between those two approaches?
+
 10. At a high level, what tools can you use to implement authorization? How would you use them?
+
 11. What's an enum, and what advantages does it offer? What data type needs to be in your database to use an enum? Where do you declare an enum?
+
 12. What are some strategies you can use to keep your views DRY?
 
 
