@@ -58,7 +58,7 @@ Note: When you're done, submit a PR with a reflection in the comments about how 
  {holiday: {name: "Hanukkah", supplies: ["Menorah"]}}
 ]
 ```  
-  order(:holiday.name)
+  order('holidays.name')
 
 14. How would you clean incoming data to ensure "$300" or "300.00" is stored as 300? 
 
