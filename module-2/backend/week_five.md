@@ -6,13 +6,13 @@ Note: When you're done, submit a PR.
 
 ### Week 5 Questions
 1. How do we make flash messages display on a page?
-   Setting up a method for flash messages in the html controller and adding the specific messages in the corresponding            controller method
+   Setting up a method for flash messages in the html controller and adding the specific messages in the corresponding controller method
 
 2. Where is cart information/temporary information usually stored?
    In a session.
 
 3. What might be some reasons not to store a cart in our database? Are there any reasons why we would want to persist that information?
-   Adding everything a visitor has in their cart, would overflow the db. When a customer ends up ordering something from the      cart, the order could be added to the db.
+   Adding everything a visitor has in their cart, would overflow the db. When a customer ends up ordering something from the cart, the order could be added to the db.
 
 4. What is the purpose of the asset pipeline?
    To concatenate assets.
@@ -36,7 +36,7 @@ Note: When you're done, submit a PR.
     Link to the project.
     How to implement and use the project.
     Benefits:
-    To inform people that will look at the project, which can help increasing their interest for the project, which can be         beneficial, e.g. a during job search process.
+    To inform people that will look at the project, which can help increasing their interest for the project, which can beneficial, e.g. a during job search process.
     To help driving a project, by using the readme as a guide through the project.
     To help managing the project expectations and having orientation when working in a team.
     
@@ -49,7 +49,7 @@ Note: When you're done, submit a PR.
     5. Forms issues
     
 9. `before_save` is an example of a what? Where in our Rails application would we find a `before_save`?
-    It's an example of a Callback, it would be used in a specific controller for local use or in the application controller       for global use through out all of the apps's controllers.
+    It's an example of a Callback, it would be used in a specific controller for local use or in the application controller for global use through out all of the apps's controllers.
 
 10. Given the following object, how would we create a scope for all users who are active?
 
